@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+                doctype-system="http://www.oracle.com/jdeveloper/html5.dtd" doctype-public="-//DTD HTML5 //EN"/>
+    <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+    <f:view>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+                <title>
+                    untitled3
+                </title>
+            </head>
+            <body>
+                <h:messages showDetail="true"/><h:form>
+                    <h:panelGrid>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="#{bindings.Id.hints.label}"/>
+                            <h:inputText value="#{bindings.Id.inputValue}" readonly="#{!bindings.Id.updateable}"
+                                         required="#{bindings.Id.hints.mandatory}"
+                                         size="#{bindings.Id.hints.displayWidth}">
+                                <f:validator binding="#{bindings.Id.validator}"/>
+                                <f:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                            </h:inputText>
+                        </h:panelGrid>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="#{bindings.Fname.hints.label}"/>
+                            <h:inputText value="#{bindings.Fname.inputValue}" readonly="#{!bindings.Fname.updateable}"
+                                         required="#{bindings.Fname.hints.mandatory}"
+                                         size="#{bindings.Fname.hints.displayWidth}">
+                                <f:validator binding="#{bindings.Fname.validator}"/>
+                            </h:inputText>
+                        </h:panelGrid>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="#{bindings.Lname.hints.label}"/>
+                            <h:inputText value="#{bindings.Lname.inputValue}" readonly="#{!bindings.Lname.updateable}"
+                                         required="#{bindings.Lname.hints.mandatory}"
+                                         size="#{bindings.Lname.hints.displayWidth}">
+                                <f:validator binding="#{bindings.Lname.validator}"/>
+                            </h:inputText>
+                        </h:panelGrid>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="#{bindings.Emall.hints.label}"/>
+                            <h:inputText value="#{bindings.Emall.inputValue}" readonly="#{!bindings.Emall.updateable}"
+                                         required="#{bindings.Emall.hints.mandatory}"
+                                         size="#{bindings.Emall.hints.displayWidth}">
+                                <f:validator binding="#{bindings.Emall.validator}"/>
+                            </h:inputText>
+                        </h:panelGrid>
+                        <h:panelGroup>
+                            <h:commandButton actionListener="#{bindings.First.execute}" value="First"
+                                             disabled="#{!bindings.First.enabled}"/>
+                            <h:commandButton actionListener="#{bindings.Previous.execute}" value="Previous"
+                                             disabled="#{!bindings.Previous.enabled}"/>
+                            <h:commandButton actionListener="#{bindings.Next.execute}" value="Next"
+                                             disabled="#{!bindings.Next.enabled}"/>
+                            <h:commandButton actionListener="#{bindings.Last.execute}" value="Last"
+                                             disabled="#{!bindings.Last.enabled}"/>
+                        </h:panelGroup>
+                        <h:commandButton value="Submit"/>
+                    </h:panelGrid>
+                </h:form>
+            </body>
+        </html>
+    </f:view>
+</jsp:root>

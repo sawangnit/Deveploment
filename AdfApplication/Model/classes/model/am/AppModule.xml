@@ -10,4 +10,7 @@
   <ViewUsage
     Name="EmployeeVO1"
     ViewObjectName="model.VO.EmployeeVO"/>
+  <ViewUsage
+    Name="RegVO1"
+    ViewObjectName="model.VO.RegVO"/>
 </AppModule>

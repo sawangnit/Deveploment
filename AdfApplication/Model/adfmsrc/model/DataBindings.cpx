@@ -3,9 +3,11 @@
              SeparateXMLFiles="false" Package="model" ClientType="Generic">
   <pageMap>
     <page path="/untitled2.jspx" usageId="model_untitled2PageDef"/>
+    <page path="/untitled3.jspx" usageId="model_untitled3PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="model_untitled2PageDef" path="model.pageDefs.untitled2PageDef"/>
+    <page id="model_untitled3PageDef" path="model.pageDefs.untitled3PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.am"

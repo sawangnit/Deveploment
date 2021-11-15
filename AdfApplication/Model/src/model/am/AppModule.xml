@@ -8,6 +8,6 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="EmpVO1"
-    ViewObjectName="model.VO.EmpVO"/>
+    Name="EmployeeVO1"
+    ViewObjectName="model.VO.EmployeeVO"/>
 </AppModule>

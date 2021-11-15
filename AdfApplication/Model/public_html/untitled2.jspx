@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+    <jsp:output omit-xml-declaration="true" doctype-root-element="HTML"
+                doctype-system="http://www.oracle.com/jdeveloper/html5.dtd" doctype-public="-//DTD HTML5 //EN"/>
+    <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+    <f:view>
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+                <title>untitled2</title>
+            </head>
+            <body>
+                <h:messages showDetail="true"/><h:form>
+                    <h:dataTable value="#{bindings.EmployeeVO1.collectionModel}" var="row"
+                                 rows="#{bindings.EmployeeVO1.rangeSize}" first="#{bindings.EmployeeVO1.rangeStart}">
+                        <h:column>
+                            <h:outputText value="#{bindings.EmployeeVO1.collectionModel.rowCurrent ? '*' : ''}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bindings.EmployeeVO1.hints.Id.label}"/>
+                            </f:facet>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="#{bindings.EmployeeVO1.hints.Id.label}"/>
+                                <h:inputText value="#{row.bindings.Id.inputValue}"
+                                             required="#{bindings.EmployeeVO1.hints.Id.mandatory}"
+                                             size="#{bindings.EmployeeVO1.hints.Id.displayWidth}">
+                                    <f:validator binding="#{row.bindings.Id.validator}"/>
+                                    <f:convertNumber groupingUsed="false"
+                                                     pattern="#{bindings.EmployeeVO1.hints.Id.format}"/>
+                                </h:inputText>
+                            </h:panelGrid>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bindings.EmployeeVO1.hints.Firstname.label}"/>
+                            </f:facet>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="#{bindings.EmployeeVO1.hints.Firstname.label}"/>
+                                <h:inputText value="#{row.bindings.Firstname.inputValue}"
+                                             required="#{bindings.EmployeeVO1.hints.Firstname.mandatory}"
+                                             size="#{bindings.EmployeeVO1.hints.Firstname.displayWidth}">
+                                    <f:validator binding="#{row.bindings.Firstname.validator}"/>
+                                </h:inputText>
+                            </h:panelGrid>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bindings.EmployeeVO1.hints.Lastname.label}"/>
+                            </f:facet>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="#{bindings.EmployeeVO1.hints.Lastname.label}"/>
+                                <h:inputText value="#{row.bindings.Lastname.inputValue}"
+                                             required="#{bindings.EmployeeVO1.hints.Lastname.mandatory}"
+                                             size="#{bindings.EmployeeVO1.hints.Lastname.displayWidth}">
+                                    <f:validator binding="#{row.bindings.Lastname.validator}"/>
+                                </h:inputText>
+                            </h:panelGrid>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bindings.EmployeeVO1.hints.Email.label}"/>
+                            </f:facet>
+                            <h:panelGrid columns="2">
+                                <h:outputLabel value="#{bindings.EmployeeVO1.hints.Email.label}"/>
+                                <h:inputText value="#{row.bindings.Email.inputValue}"
+                                             required="#{bindings.EmployeeVO1.hints.Email.mandatory}"
+                                             size="#{bindings.EmployeeVO1.hints.Email.displayWidth}">
+                                    <f:validator binding="#{row.bindings.Email.validator}"/>
+                                </h:inputText>
+                            </h:panelGrid>
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+            </body>
+        </html>
+    </f:view>
+</jsp:root>
